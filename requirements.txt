@@ -1,0 +1,4 @@
+construct==2.5.2
+Pyste==0.9.10
+scrypt==0.8.6
+six==1.11.0
