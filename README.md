@@ -9,18 +9,18 @@ X11: Install the [xcoin-hash](https://github.com/lhartikk/xcoin-hash) module.
 X13: Install the [x13_hash](https://github.com/sherlockcoin/X13-PythonHash) module
 X15: Install the [x15_hash](https://github.com/minings/x15_hash) module.
 Quark: Install the [quark_hash](https://github.com/Neisklar/quarkcoin-hash-python) module.
-Argon2: Install the [argon2_hash](https://github.com/hynek/argon2_cffi) module.
+Argon2: Install the [argon2_hash](https://github.com/ocminer/argon2-hash) module.
 
 * To install dependencies:
  ```
  git clone repo
- cd repo
+ cd repo-folder
  sudo ./setup.py install
  ```
 * Example:
  ```
  git clone https://github.com/Neisklar/quarkcoin-hash-python
- cd https://github.com/Neisklar/quarkcoin-hash-python
+ cd quarkcoin-hash-python
  sudo ./setup.py install
  ```
 
