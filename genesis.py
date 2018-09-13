@@ -1,7 +1,12 @@
+#coding=utf-8
+
 import hashlib, binascii, struct, array, os, time, sys, optparse
 import scrypt
 
 from construct import *
+
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 supported_algorithms = ["SHA256", "scrypt", "X11", "X13", "X15", "quark"]
 
