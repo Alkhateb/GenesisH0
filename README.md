@@ -1,11 +1,28 @@
 # GenesisH0
-A python script for creating the parameters required for a unique genesis block. SHA256/scrypt/X11/X13/X15.
+A python script for creating the parameters required for a unique genesis block. SHA256/scrypt/X11/X13/X15/Quark/Argon2
 
 ### Dependencies
-    sudo pip install scrypt construct==2.5.2
+sudo pip install scrypt construct==2.5.2
 
-To create geneses based on X11 algorithm you will also need to install the [xcoin-hash](https://github.com/lhartikk/xcoin-hash) module.
-For X13 you will need the [x13_hash](https://github.com/sherlockcoin/X13-PythonHash) module and for X15 the [x15_hash](https://github.com/minings/x15_hash) module. For quark you will additionally need the [quark_hash](https://github.com/Neisklar/quarkcoin-hash-python) module.
+* Additionally:
+X11: Install the [xcoin-hash](https://github.com/lhartikk/xcoin-hash) module.
+X13: Install the [x13_hash](https://github.com/sherlockcoin/X13-PythonHash) module
+X15: Install the [x15_hash](https://github.com/minings/x15_hash) module.
+Quark: Install the [quark_hash](https://github.com/Neisklar/quarkcoin-hash-python) module.
+Argon2: Install the [argon2_hash](https://github.com/hynek/argon2_cffi) module.
+
+* To install dependencies:
+ ```
+ git clone repo
+ cd repo
+ sudo ./setup.py install
+ ```
+* Example:
+ ```
+ git clone https://github.com/Neisklar/quarkcoin-hash-python
+ cd https://github.com/Neisklar/quarkcoin-hash-python
+ sudo ./setup.py install
+ ```
 
 ### Examples
 Create the original genesis hash found in Bitcoin
@@ -57,7 +74,7 @@ Create the original genesis hash found in HiroCoin (requires [xcoin-hash](https:
          the first value of the nonce that will be incremented
          when searching the genesis hash
       -a ALGORITHM, --algorithm=ALGORITHM
-         the PoW algorithm: [SHA256|scrypt|X11|X13|X15]
+         the PoW algorithm: [SHA256|scrypt|X11|X13|X15|quark|argon2]
       -p PUBKEY, --pubkey=PUBKEY
          the pubkey found in the output script
       -v VALUE, --value=VALUE

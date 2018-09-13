@@ -40,7 +40,7 @@ def get_args():
   parser.add_option("-n", "--nonce", dest="nonce", default=0,
                    type="int", help="the first value of the nonce that will be incremented when searching the genesis hash")
   parser.add_option("-a", "--algorithm", dest="algorithm", default="SHA256",
-                    help="the PoW algorithm: [SHA256|scrypt|X11|X13|X15|quark]")
+                    help="the PoW algorithm: [SHA256|scrypt|X11|X13|X15|quark|argon2]")
   parser.add_option("-p", "--pubkey", dest="pubkey", default="04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f",
                    type="string", help="the pubkey found in the output script")
   parser.add_option("-v", "--value", dest="value", default=5000000000,
@@ -175,13 +175,17 @@ def generate_hashes_from_block(data_block, algorithm):
     header_hash = x15_hash.getPoWHash(data_block)[::-1]
   elif algorithm == 'quark':
     try:
-        import quark_hash
-        header_hash = quark_hash.getPoWHash(data_block)[::-1]
+      exec('import %s' % "quark_hash")
     except ImportError:
-        sys.exit("Cannot run quark algorithm: module quark_hash not found")
+      sys.exit("Cannot run quark algorithm: module quark_hash not found")
+    header_hash = quark_hash.getPoWHash(data_block)[::-1]
+  elif algorithm == 'argon2':
+    try:
+      exec('import %s' % "argon2_hash")
+    except ImportError:
+      sys.exit("Cannot run argon2-hash algorithm: module argon2_hash not found")
+    header_hash = argon2_hash.getPoWHash(data_block)[::-1]
   return sha256_hash, header_hash
-
-
 
 def is_genesis_hash(header_hash, target):
   return int(header_hash.encode('hex_codec'), 16) < target
