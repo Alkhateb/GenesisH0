@@ -8,7 +8,7 @@ from construct import *
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-supported_algorithms = ["SHA256", "scrypt", "X11", "X13", "X15", "quark"]
+supported_algorithms = ["SHA256", "scrypt", "X11", "X13", "X15", "quark", "argon2"]
 
 def main():
   print 'Searching for genesis hash...'
