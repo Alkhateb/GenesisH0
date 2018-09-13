@@ -5,7 +5,7 @@ A python script for creating the parameters required for a unique genesis block.
 sudo pip install scrypt construct==2.5.2
 
 * Additionally:
-X11: Install the [xcoin-hash](https://github.com/lhartikk/xcoin-hash) module.
+X11: Install the [dash-hash](https://github.com/dashpay/dash_hash) module.
 X13: Install the [x13_hash](https://github.com/sherlockcoin/X13-PythonHash) module
 X15: Install the [x15_hash](https://github.com/minings/x15_hash) module.
 Quark: Install the [quark_hash](https://github.com/Neisklar/quarkcoin-hash-python) module.
