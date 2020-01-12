@@ -17,13 +17,13 @@ Argon2: Install the [argon2_hash](https://github.com/ocminer/argon2-hash) module
  ```
  git clone repo
  cd repo-folder
- sudo ./setup.py install
+ python ./setup.py install
  ```
-* Example:
+* Example install quark:
  ```
  git clone https://github.com/Neisklar/quarkcoin-hash-python
  cd quarkcoin-hash-python
- sudo ./setup.py install
+ python ./setup.py install
  ```
 
 ### Examples
