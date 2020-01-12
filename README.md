@@ -3,6 +3,7 @@ A python script for creating the parameters required for a unique genesis block.
 
 ### Dependencies
 sudo apt install python-pip
+
 sudo pip install scrypt construct==2.5.2
 
 * Additionally:
