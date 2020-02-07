@@ -2,6 +2,8 @@
 A python script for creating the parameters required for a unique genesis block. SHA256/scrypt/X11/X13/X15/Quark/Argon2
 
 ### Dependencies
+sudo apt-get install build-essential libssl-dev python-dev
+
 sudo apt install python-pip
 
 sudo pip install scrypt construct==2.5.2
